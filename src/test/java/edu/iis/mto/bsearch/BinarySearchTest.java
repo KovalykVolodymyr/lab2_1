@@ -30,6 +30,14 @@ public class BinarySearchTest {
         Assert.assertEquals(0,searchResult.getPosition());
 
     }
+    @Test
+    public void IfSqunsiFirstElement(){
+        int[] seq ={3,5,6};
+        int itemtoFind=3;
+        SearchResult searchResult =BinarySearch.search(itemtoFind,seq);
+        Assert.assertTrue(searchResult.isFound());
+        Assert.assertEquals(0,searchResult.getPosition());
 
+    }
 
 }
