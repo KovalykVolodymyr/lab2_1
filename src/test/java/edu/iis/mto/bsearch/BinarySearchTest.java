@@ -20,4 +20,16 @@ public class BinarySearchTest {
         Assert.assertEquals(0,searchResult.getPosition());
 
     }
+
+    @Test
+    public void IfSqunsiWithoutElement(){
+        int[] seq ={2};
+        int itemtoFind=3;
+        SearchResult searchResult =BinarySearch.search(itemtoFind,seq);
+        Assert.assertFalse(searchResult.isFound());
+        Assert.assertEquals(0,searchResult.getPosition());
+
+    }
+
+
 }
