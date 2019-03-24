@@ -68,4 +68,14 @@ public class BinarySearchTest {
         Assert.assertEquals(-1,searchResult.getPosition());
 
     }
+
+    @Test
+    public void testElementNotExistingWithTabele0Sequence(){
+        int[] seq =new int[0];
+        int itemtoFind=2;
+        SearchResult searchResult =BinarySearch.search(itemtoFind,seq);
+        Assert.assertFalse(searchResult.isFound());
+        Assert.assertEquals(-1,searchResult.getPosition());
+
+    }
 }
