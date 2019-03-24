@@ -39,5 +39,14 @@ public class BinarySearchTest {
         Assert.assertEquals(0,searchResult.getPosition());
 
     }
+    @Test
+    public void testElementNExistingLastSequence(){
+        int[] seq ={1,6,7,8};
+        int itemtoFind=8;
+        SearchResult searchResult =BinarySearch.search(itemtoFind,seq);
+        Assert.assertTrue(searchResult.isFound());
+        Assert.assertEquals(seq.length -1,searchResult.getPosition());
+
+    }
 
 }
