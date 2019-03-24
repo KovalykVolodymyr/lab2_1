@@ -79,4 +79,11 @@ public class BinarySearchTest {
         Assert.assertThat(searchResult.getPosition(),is(-1));
 
     }
+    @Test public void testElementIsNegativeNumberInSequence(){
+        int[] seq = {-6, -3, 4, 5, 6};
+        int key = -3;
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        Assert.assertThat( searchResult.getPosition(),is(1));
+    }
 }
