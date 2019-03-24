@@ -12,7 +12,7 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void IfSqunsiHaveOnlyOneElement(){
+    public void testElementExistingInSequence(){
         int[] seq ={3};
         int itemtoFind=3;
         SearchResult searchResult =BinarySearch.search(itemtoFind,seq);
@@ -22,16 +22,16 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void IfSqunsiWithoutElement(){
+    public void testElementNotExistingInSequence(){
         int[] seq ={2};
         int itemtoFind=3;
         SearchResult searchResult =BinarySearch.search(itemtoFind,seq);
         Assert.assertFalse(searchResult.isFound());
-        Assert.assertEquals(0,searchResult.getPosition());
+        Assert.assertEquals(-1,searchResult.getPosition());
 
     }
     @Test
-    public void IfSqunsiFirstElement(){
+    public void testElementNExistingFirstSequence(){
         int[] seq ={3,5,6};
         int itemtoFind=3;
         SearchResult searchResult =BinarySearch.search(itemtoFind,seq);
