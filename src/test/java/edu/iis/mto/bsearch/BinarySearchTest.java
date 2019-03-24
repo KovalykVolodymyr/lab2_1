@@ -31,7 +31,7 @@ public class BinarySearchTest {
 
     }
     @Test
-    public void testElementNExistingFirstSequence(){
+    public void testElementExistingFirstSequence(){
         int[] seq ={3,5,6};
         int itemtoFind=3;
         SearchResult searchResult =BinarySearch.search(itemtoFind,seq);
@@ -40,7 +40,7 @@ public class BinarySearchTest {
 
     }
     @Test
-    public void testElementNExistingLastSequence(){
+    public void testElementExistingLastSequence(){
         int[] seq ={1,6,7,8};
         int itemtoFind=8;
         SearchResult searchResult =BinarySearch.search(itemtoFind,seq);
@@ -49,4 +49,13 @@ public class BinarySearchTest {
 
     }
 
+    @Test
+    public void testElementExistingMiddleSequence(){
+        int[] seq ={1,6,7};
+        int itemtoFind=6;
+        SearchResult searchResult =BinarySearch.search(itemtoFind,seq);
+        Assert.assertTrue(searchResult.isFound());
+        Assert.assertEquals((seq.length -1)/2,searchResult.getPosition());
+
+    }
 }
