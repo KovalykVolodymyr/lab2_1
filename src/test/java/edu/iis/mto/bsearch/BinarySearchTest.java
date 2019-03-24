@@ -2,6 +2,7 @@ package edu.iis.mto.bsearch;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
@@ -81,9 +82,17 @@ public class BinarySearchTest {
     }
     @Test public void testElementIsNegativeNumberInSequence(){
         int[] seq = {-6, -3, 4, 5, 6};
-        int key = -3;
+        int itemtoFind = -3;
 
-        SearchResult searchResult = BinarySearch.search(key, seq);
+        SearchResult searchResult = BinarySearch.search(itemtoFind, seq);
         Assert.assertThat( searchResult.getPosition(),is(1));
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testElementNotExistingForTestV3Sequence(){
+        int[] seq = {};
+        int itemtoFind = 4;
+
+        BinarySearch.search(itemtoFind, seq);
     }
 }
